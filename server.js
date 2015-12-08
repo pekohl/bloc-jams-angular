@@ -23,7 +23,7 @@ var Hapi = require('hapi'),
             path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
-        staticPages: {
+        ststicPages: {
             method: 'GET',
             path: '/{path*}',
             handler: createDirectoryRoute('/')
