@@ -1,1 +1,2 @@
-angular.module('ngBlocJams', []);
+angular
+    .module('ngBlocJams', []);
