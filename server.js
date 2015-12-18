@@ -23,14 +23,14 @@ var Hapi = require('hapi'),
             path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
-        ststicPages: {
+        staticPages: {
             method: 'GET',
             path: '/{path*}',
             handler: createDirectoryRoute('/')
         }
     };
 
-server.route([ routes.css, routes.js, routes.images, routes.templates, routes.staticPages ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.staticPages ]);
 server.start( onServerStarted );
 
 function onServerStarted() {
