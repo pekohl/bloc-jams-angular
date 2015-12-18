@@ -12,8 +12,13 @@
     <link rel="stylesheet" type="text/css" href="/styles/collection.css">
     <link rel="stylesheet" type="text/css" href="/styles/album.css">
     <link rel="stylesheet" type="text/css" href="/styles/player_bar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="/scripts/app.js"></script>
+
 </head>
 <body>
+
     <nav class="navbar">
             <a href="index.html" class="logo">
                 <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo">
@@ -23,8 +28,9 @@
             </div>
     </nav>
 
-    <script src="/scripts/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <ui-view></ui-view>
+
+
 </body>
 </html>
-a
+
