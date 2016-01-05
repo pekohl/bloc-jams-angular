@@ -13,7 +13,7 @@ var Hapi = require('hapi'),
             path: '/scripts/{path*}',
             handler: createDirectoryRoute('scripts')
         },
-        assets: {
+        images: {
             method: 'GET',
             path: '/assets/{path*}',
             handler: createDirectoryRoute('assets')
@@ -23,7 +23,7 @@ var Hapi = require('hapi'),
             path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
-        ststicPages: {
+        staticPages: {
             method: 'GET',
             path: '/{path*}',
             handler: createDirectoryRoute('/')
