@@ -65,10 +65,10 @@ module.exports = function(grunt) {
                     server: require('path').resolve('./server'),
                     bases: {
                         '/dist': require('path').resolve('./dist/')
-                        }
                     }
                 }
-            },
+            }
+        },
 
         clean: ['./dist']
     });

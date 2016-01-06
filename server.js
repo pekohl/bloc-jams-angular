@@ -5,32 +5,34 @@ var Hapi = require('hapi'),
     routes = {
         css: {
             method: 'GET',
-            path: '/app/styles/{path*}',
+            path: '/styles/{path*}',
             handler: createDirectoryRoute('styles')
         },
         js: {
             method: 'GET',
-            path: '/app/scripts/{path*}',
+            path: '/scripts/{path*}',
             handler: createDirectoryRoute('scripts')
         },
-        images: {
+        assets: {
             method: 'GET',
-            path: '/app/assets/{path*}',
+            path: '/assets/{path*}',
             handler: createDirectoryRoute('assets')
         },
         templates: {
             method: 'GET',
-            path: '/app/templates/{path*}',
+            path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
-        staticPages: {
+        spa: {
             method: 'GET',
-            path: '/app/{path*}',
-            handler: createDirectoryRoute('/')
+            path: '/{path*}',
+            handler: {
+                file: path.join(__dirname, '/dist/index.html')
+            }
         }
     };
 
-server.route([ routes.css, routes.js, routes.images, routes.templates, routes.staticPages ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa ]);
 server.start( onServerStarted );
 
 function onServerStarted() {
