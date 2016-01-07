@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="ngBlocJams">
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Jams Angular</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.css">
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
@@ -12,23 +13,31 @@
     <link rel="stylesheet" type="text/css" href="/styles/collection.css">
     <link rel="stylesheet" type="text/css" href="/styles/album.css">
     <link rel="stylesheet" type="text/css" href="/styles/player_bar.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-    <script src="/scripts/app.js"></script>
+
 
 </head>
-    <body>
 
+<body>
     <nav class="navbar">
-            <a ui-sref="index" class="logo">
-                <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo">
-            </a>
+        <a ui-sref="landing" class="logo">
+            <img src="/assets/images/bloc_jams_logo.png" alt="bloc jams logo">
+        </a>
+        <div class="links-container">
             <div class="links-container">
-                <a ui-sref="collection" class="navbar-link">Collection</a>
-            </div>
+               <a ui-sref="collection" class="navbar-link">collection</a>
+             <a ui-sref="album" class="navbar-link">album</a>
+           </div>
+        </div>
     </nav>
 
-        <ui-view></ui-view>
+    <ui-View></ui-View>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.js"></script>
+    <script src="/scripts/app.js"></script>
+
 
     </body>
 </html>

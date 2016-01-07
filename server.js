@@ -13,7 +13,7 @@ var Hapi = require('hapi'),
             path: '/scripts/{path*}',
             handler: createDirectoryRoute('scripts')
         },
-        images: {
+        assets: {
             method: 'GET',
             path: '/assets/{path*}',
             handler: createDirectoryRoute('assets')
@@ -23,14 +23,16 @@ var Hapi = require('hapi'),
             path: '/templates/{path*}',
             handler: createDirectoryRoute('templates')
         },
-        staticPages: {
+        spa: {
             method: 'GET',
             path: '/{path*}',
-            handler: createDirectoryRoute('/')
+            handler: {
+                file: path.join(__dirname, '/dist/index.html')
+            }
         }
     };
 
-server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.staticPages ]);
+server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.spa ]);
 server.start( onServerStarted );
 
 function onServerStarted() {
