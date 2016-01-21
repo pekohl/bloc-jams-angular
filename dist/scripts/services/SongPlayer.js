@@ -9,6 +9,7 @@
             if (currentSong !== song) {
                 if (currentBuzzObject) {
                     currentBuzzObject.stop();
+                    currentSong.playing = null;
                 } else if (currentSong === song) {
                     if (currentBuzzObject.isPaused()) {
                     currentBuzzObject.play();
@@ -23,13 +24,19 @@
             currentSong = song;
 
             currentBuzzObject.play();
+            song.playing = true;
             }
         };
+
+         SongPlayer.pause = function(song) {
+             currentBuzzObject.pause();
+             song.playing = false;
+         };
 
         return SongPlayer;
      }
 
      angular
-         .module('blocJams')
+         .module('ngBlocJams')
          .factory('SongPlayer', SongPlayer);
  })();
