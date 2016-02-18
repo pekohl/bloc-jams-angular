@@ -1,4 +1,9 @@
 (function() {
+    /**
+  *@function timecode
+  *@desc takes song in total seconds and converts time of song into minutes and seconds
+  @return output in readbale minutes and seconds
+  */
      function timecode() {
          return function(seconds) {
              var seconds = Number.parseFloat(seconds);
